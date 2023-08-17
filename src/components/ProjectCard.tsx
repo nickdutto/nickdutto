@@ -7,9 +7,9 @@ type Props = {
 
 const ProjectCard = ({ name, imgSrc }: Props) => {
   return (
-    <div className="m-1 border-2 border-zinc-800 text-center">
-      <img src={imgSrc} alt="" className="h-[200px] bg-zinc-900/50" />
-      <h3 className="bg-zinc-800">{name}</h3>
+    <div className="m-1 rounded-md border border-zinc-800 bg-zinc-800/40 text-center">
+      <h3 className="py-2 text-lg">{name}</h3>
+      <img src={imgSrc} alt="" className="rounded-b-md bg-zinc-900/50" />
     </div>
   );
 };
