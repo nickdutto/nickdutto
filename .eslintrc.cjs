@@ -27,5 +27,6 @@ module.exports = {
     'end-of-line': 'off',
     'no-unused-vars': 'warn',
     '@typescript-eslint/no-unused-vars': 'warn',
+    '@typescript-eslint/consistent-type-definitions': 'off',
   },
 };
