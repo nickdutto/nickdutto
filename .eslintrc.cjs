@@ -1,5 +1,5 @@
 module.exports = {
-  plugins: ['@typescript-eslint', 'import'],
+  plugins: ['@typescript-eslint'],
   extends: [
     'next/core-web-vitals',
     'eslint:recommended',
@@ -23,9 +23,8 @@ module.exports = {
       'error',
       { prefer: 'type-imports', fixStyle: 'inline-type-imports' },
     ],
-    'import/consistent-type-specifier-style': ['error', 'prefer-inline'],
     'end-of-line': 'off',
-    'no-unused-vars': 'warn',
+    'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': 'warn',
     '@typescript-eslint/consistent-type-definitions': 'off',
   },
