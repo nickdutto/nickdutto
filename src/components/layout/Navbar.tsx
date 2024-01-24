@@ -23,7 +23,11 @@ const Navbar = () => {
 
   const pathname = usePathname();
 
-  const linkCn = (path: string) => clsx([pathname === path ? 'text-primary' : 'text-default-500']);
+  const linkCn = (path: string, wildcard: boolean) => {
+    const activePath = wildcard ? new RegExp(`^${path}(\\/|$)`).test(pathname) : path === pathname;
+
+    return clsx([activePath ? 'text-primary' : 'text-default-500']);
+  };
 
   return (
     <NuiNavbar
@@ -44,7 +48,7 @@ const Navbar = () => {
       <NavbarContent justify="center" className="hidden sm:flex">
         {nav_links.map((link) => (
           <NavbarItem key={link.path} isActive={pathname === link.path}>
-            <Link href={link.path} className={linkCn(link.path)}>
+            <Link href={link.path} className={linkCn(link.path, link.wildcard)}>
               {link.name}
             </Link>
           </NavbarItem>
@@ -71,7 +75,7 @@ const Navbar = () => {
             <Link
               href={link.path}
               size="lg"
-              className={`w-full justify-center text-center ${linkCn(link.path)}`}
+              className={`w-full justify-center text-center ${linkCn(link.path, link.wildcard)}`}
             >
               {link.name}
             </Link>

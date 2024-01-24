@@ -1,14 +1,17 @@
 export const nav_links = [
   {
     name: 'Home',
-    path: '/'
+    path: '/',
+    wildcard: false,
   },
   {
     name: 'Projects',
-    path: '/projects'
+    path: '/projects',
+    wildcard: true,
   },
   {
     name: 'Contact',
-    path: '/contact'
-  }
+    path: '/contact',
+    wildcard: false,
+  },
 ] as const;
