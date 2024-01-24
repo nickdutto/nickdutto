@@ -5,7 +5,7 @@ type Props = ComponentProps<'section'>;
 const HeaderSection = ({ ...props }: Props) => {
   return (
     <section {...props}>
-      <h2 className="text-xl font-bold text-default-700 sm:text-3xl">
+      <h2 className="text-2xl font-bold text-default-700 sm:text-3xl">
         Hi, I&apos;m{' '}
         <span className="bg-gradient-to-r from-fuchsia-500 to-blue-600 bg-clip-text text-transparent">
           Nick Dutton

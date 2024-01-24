@@ -34,7 +34,7 @@ const ProjectCard = ({
       <CardBody
         {...cardBodyProps}
         className={cn([
-          'gap-6 p-4',
+          'gap-4 p-4 sm:gap-6',
           cardBodyProps?.className,
           bodyOrientation === 'column' && 'flex-col',
           bodyOrientation === 'row' && 'flex-col sm:flex-row',
