@@ -1,13 +1,15 @@
-import PortfolioCard from '~/components/PortfolioCard';
+import HeaderSection from '~/app/header';
+import SkillsSection from '~/app/skills';
+import Divider from '~/components/ui/Divider';
 
-const About = () => {
+const Page = () => {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <PortfolioCard>
-        <h1 className="text-3xl font-bold text-white">About</h1>
-      </PortfolioCard>
+    <main className="flex flex-col items-center justify-center p-4">
+      <HeaderSection className="flex w-full max-w-5xl flex-col gap-2 px-0 py-4 sm:px-6" />
+      <Divider wrapperProps={{ className: 'w-full max-w-5xl px-0 sm:px-6' }} />
+      <SkillsSection className="flex w-full max-w-5xl flex-col gap-2 px-0 py-4 sm:px-6" />
     </main>
   );
 };
 
-export default About;
+export default Page;

@@ -22,7 +22,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       className={`${GeistSans.variable} ${GeistMono.variable} dark`}
       suppressHydrationWarning
     >
-      <body>
+      <body className="h-full min-h-[100svh] w-full bg-[radial-gradient(#18181b_1.5px,transparent_1.5px)] [background-size:30px_30px]">
         <Providers>
           <Navbar />
           {children}
