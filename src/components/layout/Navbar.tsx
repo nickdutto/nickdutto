@@ -29,9 +29,9 @@ const Navbar = () => {
     <NuiNavbar
       isBordered
       onMenuOpenChange={setMenuOpen}
-      maxWidth="lg"
       classNames={{
         base: 'border-b-default-50',
+        wrapper: 'max-w-7xl',
       }}
     >
       <NavbarContent>

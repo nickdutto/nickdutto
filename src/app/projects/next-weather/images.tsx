@@ -19,7 +19,7 @@ const ImagesSection = ({ ...props }: Props) => {
   return (
     <>
       <ImageModal image={image} isOpen={isOpen} onClose={onClose} onOpenChange={onOpenChange} />
-      <div className="flex flex-col gap-4" {...props}>
+      <div className="flex flex-col gap-4 sm:flex-row" {...props}>
         <Image
           width={1500}
           src="/projects/next-weather-weather.png"

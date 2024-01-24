@@ -47,7 +47,7 @@ const ProjectCard = ({
           ])}
         >
           <h3 className="text-base font-semibold text-default-600 sm:text-large">{title}</h3>
-          <p className="text-small text-default-500 sm:text-base">{children}</p>
+          <p className="max-w-prose text-small text-default-500 sm:text-base">{children}</p>
           <Button as={Link} href={href} variant="flat" radius="lg" color="primary">
             Read More
           </Button>
