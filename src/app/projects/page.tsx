@@ -1,19 +1,14 @@
-import PortfolioCard from '~/components/PortfolioCard';
-import ProjectCard from '~/components/ProjectCard';
+import ProjectCards from '~/components/project/ProjectCards';
 
-const Projects = () => {
+const Page = () => {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <PortfolioCard>
-        <h1 className="p-2 pl-4 text-lg text-white">Projects</h1>
-        <div className="border-b-2 border-zinc-800" />
-        <div className="grid grid-cols-2 p-2">
-          <ProjectCard name="Next Weather" imgSrc="/projects/next-weather-preview.jpg" />
-          <ProjectCard name="CapturCMS" imgSrc="/projects/capturcms-preview.jpg" />
-        </div>
-      </PortfolioCard>
+    <main className="flex flex-col items-center justify-center p-4">
+      <section className="flex w-full max-w-7xl flex-col gap-4 px-0 sm:px-6">
+        <h2 className="text-center text-2xl font-bold text-default-600 sm:text-3xl">Projects</h2>
+        <ProjectCards />
+      </section>
     </main>
   );
 };
 
-export default Projects;
+export default Page;
