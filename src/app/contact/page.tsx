@@ -1,13 +1,5 @@
-import PortfolioCard from '~/components/PortfolioCard';
-
 const Contact = () => {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <PortfolioCard>
-        <h1 className="text-3xl font-bold text-white">Contact</h1>
-      </PortfolioCard>
-    </main>
-  );
+  return <main className="flex min-h-[calc(100svh-64.8px)] justify-center p-4"></main>;
 };
 
 export default Contact;
