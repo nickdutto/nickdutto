@@ -1,5 +1,5 @@
 'use client';
-
+import NextLink from 'next/link';
 import {
   Link,
   Navbar as NuiNavbar,
@@ -11,6 +11,7 @@ import {
   NavbarMenuToggle,
 } from '@nextui-org/react';
 
+import clsx from 'clsx';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
@@ -22,19 +23,28 @@ const Navbar = () => {
 
   const pathname = usePathname();
 
+  const linkCn = (path: string) => clsx([pathname === path ? 'text-primary' : 'text-default-500']);
+
   return (
-    <NuiNavbar isBordered onMenuOpenChange={setMenuOpen}>
+    <NuiNavbar
+      isBordered
+      onMenuOpenChange={setMenuOpen}
+      maxWidth="lg"
+      classNames={{
+        base: 'border-b-default-50',
+      }}
+    >
       <NavbarContent>
         <NavbarBrand>
-          <h1 className="bg-gradient-to-r from-fuchsia-500 to-blue-600 bg-clip-text text-3xl font-bold text-transparent">
-            Nick Dutton
+          <h1 className="bg-gradient-to-r from-fuchsia-500 to-blue-600 bg-clip-text font-semibold text-transparent">
+            <NextLink href="/">Nick Dutton</NextLink>
           </h1>
         </NavbarBrand>
       </NavbarContent>
       <NavbarContent justify="center" className="hidden sm:flex">
         {nav_links.map((link) => (
           <NavbarItem key={link.path} isActive={pathname === link.path}>
-            <Link color={pathname === link.path ? 'primary' : 'foreground'} href={link.path}>
+            <Link href={link.path} className={linkCn(link.path)}>
               {link.name}
             </Link>
           </NavbarItem>
@@ -59,10 +69,9 @@ const Navbar = () => {
         {nav_links.map((link) => (
           <NavbarMenuItem key={link.path} className="text-center">
             <Link
-              color={pathname === link.path ? 'primary' : 'foreground'}
               href={link.path}
               size="lg"
-              className="w-full justify-center text-center"
+              className={`w-full justify-center text-center ${linkCn(link.path)}`}
             >
               {link.name}
             </Link>
