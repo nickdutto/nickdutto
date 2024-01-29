@@ -2,13 +2,14 @@
 
 import { Image, useDisclosure } from '@nextui-org/react';
 
+import NextImage from 'next/image';
 import { type ComponentProps, useState } from 'react';
 
 import ImageModal, { type ModalImage } from '~/components/image/ImageModal';
 
 type Props = ComponentProps<'div'>;
 
-const ImagesSection = ({ ...props }: Props) => {
+const Screenshots = ({ ...props }: Props) => {
   const { isOpen, onOpen, onClose, onOpenChange } = useDisclosure();
   const [image, setImage] = useState<ModalImage>();
 
@@ -17,15 +18,17 @@ const ImagesSection = ({ ...props }: Props) => {
     onOpen();
   };
   return (
-    <>
+    <section>
+      <h2>Screenshots</h2>
       <ImageModal image={image} isOpen={isOpen} onClose={onClose} onOpenChange={onOpenChange} />
-      <div className="flex flex-col gap-4 sm:flex-row" {...props}>
+      <div className="flex flex-col gap-4" {...props}>
         <Image
+          as={NextImage}
           width={632}
           height={632}
           src="/projects/next-weather-weather.png"
           alt="Weather Dashboard"
-          className="cursor-zoom-in"
+          className="not-prose cursor-zoom-in"
           onClick={() =>
             setImageModal({
               width: 1500,
@@ -36,11 +39,12 @@ const ImagesSection = ({ ...props }: Props) => {
           }
         />
         <Image
+          as={NextImage}
           width={632}
           height={632}
           src="/projects/next-weather-water.png"
           alt="WaterData Station Dashboard"
-          className="cursor-zoom-in"
+          className="not-prose cursor-zoom-in"
           onClick={() =>
             setImageModal({
               width: 1500,
@@ -51,8 +55,8 @@ const ImagesSection = ({ ...props }: Props) => {
           }
         />
       </div>
-    </>
+    </section>
   );
 };
 
-export default ImagesSection;
+export default Screenshots;
