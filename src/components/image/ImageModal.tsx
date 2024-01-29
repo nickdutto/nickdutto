@@ -2,6 +2,7 @@
 
 import { Image, Modal, ModalBody, ModalContent, ModalHeader } from '@nextui-org/react';
 
+import NextImage from 'next/image';
 import { TransformComponent, TransformWrapper } from 'react-zoom-pan-pinch';
 
 export type ModalImage = {
@@ -42,6 +43,7 @@ const ImageModal = ({ image, isOpen, onClose, onOpenChange }: Props) => {
           <TransformWrapper disablePadding>
             <TransformComponent>
               <Image
+                as={NextImage}
                 width={image?.width}
                 height={image?.height}
                 src={image?.src}
