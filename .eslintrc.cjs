@@ -13,7 +13,11 @@ module.exports = {
   overrides: [
     {
       extends: ['plugin:@typescript-eslint/disable-type-checked'],
-      files: ['./**/*.{js,cjs}', '!./next-env.d.ts'],
+      files: ['./**/*.{js,cjs,mdx}', '!./next-env.d.ts'],
+    },
+    {
+      files: ['*.mdx'],
+      extends: 'plugin:mdx/recommended',
     },
   ],
   root: true,
