@@ -6,6 +6,7 @@ import { TransformComponent, TransformWrapper } from 'react-zoom-pan-pinch';
 
 export type ModalImage = {
   width: number;
+  height: number;
   src: string;
   alt: string;
 };
@@ -40,7 +41,13 @@ const ImageModal = ({ image, isOpen, onClose, onOpenChange }: Props) => {
         <ModalBody className="justify-center p-0" onClick={HandleBodyClick}>
           <TransformWrapper disablePadding>
             <TransformComponent>
-              <Image width={1200} src={image?.src} alt={image?.alt} radius="none" />
+              <Image
+                width={image?.width}
+                height={image?.height}
+                src={image?.src}
+                alt={image?.alt}
+                radius="none"
+              />
             </TransformComponent>
           </TransformWrapper>
         </ModalBody>

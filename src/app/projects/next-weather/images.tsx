@@ -21,26 +21,30 @@ const ImagesSection = ({ ...props }: Props) => {
       <ImageModal image={image} isOpen={isOpen} onClose={onClose} onOpenChange={onOpenChange} />
       <div className="flex flex-col gap-4 sm:flex-row" {...props}>
         <Image
-          width={1500}
+          width={632}
+          height={632}
           src="/projects/next-weather-weather.png"
           alt="Weather Dashboard"
           className="cursor-zoom-in"
           onClick={() =>
             setImageModal({
               width: 1500,
+              height: 1500,
               src: '/projects/next-weather-water.png',
               alt: 'WaterData Station Dashboard',
             })
           }
         />
         <Image
-          width={1500}
+          width={632}
+          height={632}
           src="/projects/next-weather-water.png"
           alt="WaterData Station Dashboard"
           className="cursor-zoom-in"
           onClick={() =>
             setImageModal({
               width: 1500,
+              height: 1500,
               src: '/projects/next-weather-water.png',
               alt: 'WaterData Station Dashboard',
             })

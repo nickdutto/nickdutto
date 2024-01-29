@@ -10,8 +10,14 @@ type Props = CardProps & {
   title: string;
   href: string;
   images: {
-    first: ModalImage;
-    second?: ModalImage;
+    first: {
+      lg: ModalImage;
+      sm: ModalImage;
+    };
+    second?: {
+      lg: ModalImage;
+      sm: ModalImage;
+    };
   };
   bodyOrientation?: 'column' | 'row';
   cardBodyProps?: ComponentProps<'div'>;
@@ -48,25 +54,27 @@ const ProjectCard = ({
         >
           <h3 className="text-base font-semibold text-default-600 sm:text-large">{title}</h3>
           <p className="max-w-prose text-small text-default-500 sm:text-base">{children}</p>
-          <Button as={Link} href={href} variant="flat" radius="lg" color="primary">
-            Read More
+          <Button as={Link} prefetch={false} href={href} radius="lg" color="primary">
+            Learn more <span className="sr-only">about {title}</span>
           </Button>
         </div>
         <div className="flex gap-2 sm:w-1/2">
           <Image
-            width={images.first.width}
-            src={images.first.src}
-            alt={images.first.alt}
+            width={290}
+            height={290}
+            src={images.first.sm.src}
+            alt={images.first.sm.alt}
             className="cursor-zoom-in"
-            onClick={() => setImageModal(images.first)}
+            onClick={() => setImageModal(images.first.lg)}
           />
           {images?.second && (
             <Image
-              width={images.second.width}
-              src={images.second.src}
-              alt={images.second.alt}
+              width={290}
+              height={290}
+              src={images.second.sm.src}
+              alt={images.second.sm.alt}
               className="cursor-zoom-in"
-              onClick={() => images?.second && setImageModal(images.second)}
+              onClick={() => images?.second && setImageModal(images.second.lg)}
             />
           )}
         </div>

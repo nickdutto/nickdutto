@@ -24,14 +24,32 @@ const ProjectCards = () => {
           href="/projects/next-weather"
           images={{
             first: {
-              src: '/projects/next-weather-weather.png',
-              alt: 'Weather Dashboard',
-              width: 1500,
+              lg: {
+                src: '/projects/next-weather-weather.png',
+                alt: 'Weather Dashboard',
+                width: 1500,
+                height: 1500,
+              },
+              sm: {
+                src: '/projects/next-weather-weather-sm.png',
+                alt: 'Weather Dashboard',
+                width: 750,
+                height: 750,
+              },
             },
             second: {
-              src: '/projects/next-weather-water.png',
-              alt: 'WaterData Station Dashboard',
-              width: 1500,
+              lg: {
+                src: '/projects/next-weather-water.png',
+                alt: 'WaterData Station Dashboard',
+                width: 1500,
+                height: 1500,
+              },
+              sm: {
+                src: '/projects/next-weather-water-sm.png',
+                alt: 'WaterData Station Dashboard',
+                width: 750,
+                height: 750,
+              },
             },
           }}
           setImageModal={setImageModal}

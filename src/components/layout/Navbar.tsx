@@ -38,13 +38,13 @@ const Navbar = () => {
         wrapper: 'max-w-7xl',
       }}
     >
-      <NavbarContent>
-        <NavbarBrand>
-          <h1 className="bg-gradient-to-r from-fuchsia-500 to-blue-600 bg-clip-text font-semibold text-transparent">
-            <NextLink href="/">Nick Dutton</NextLink>
-          </h1>
-        </NavbarBrand>
-      </NavbarContent>
+      <NavbarBrand>
+        <h1 className="bg-gradient-to-r from-fuchsia-500 to-blue-600 bg-clip-text font-semibold text-transparent">
+          <NextLink prefetch={false} href="/">
+            Nick Dutton
+          </NextLink>
+        </h1>
+      </NavbarBrand>
       <NavbarContent justify="center" className="hidden sm:flex">
         {nav_links.map((link) => (
           <NavbarItem key={link.path} isActive={pathname === link.path}>
@@ -58,17 +58,19 @@ const Navbar = () => {
         <NavbarItem>
           <Link
             href="https://github.com/ZippyIO"
+            aria-label="Nick Dutton's GitHub profile"
             isExternal
             className="flex items-center justify-center"
           >
             <GithubIcon size={20} className="fill-default-600" />
           </Link>
         </NavbarItem>
-        <NavbarMenuToggle
-          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-          className="sm:hidden"
-        />
       </NavbarContent>
+      <NavbarMenuToggle
+        aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+        role="button"
+        className="sm:hidden"
+      />
       <NavbarMenu>
         {nav_links.map((link) => (
           <NavbarMenuItem key={link.path} className="text-center">
