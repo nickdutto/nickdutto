@@ -1,5 +1,6 @@
 import { Button, Card, CardBody, type CardProps, Image } from '@nextui-org/react';
 
+import NextImage from 'next/image';
 import Link from 'next/link';
 import { type ComponentProps, type ReactNode } from 'react';
 
@@ -60,6 +61,7 @@ const ProjectCard = ({
         </div>
         <div className="flex gap-2 sm:w-1/2">
           <Image
+            as={NextImage}
             width={290}
             height={290}
             src={images.first.sm.src}
@@ -69,6 +71,7 @@ const ProjectCard = ({
           />
           {images?.second && (
             <Image
+              as={NextImage}
               width={290}
               height={290}
               src={images.second.sm.src}
