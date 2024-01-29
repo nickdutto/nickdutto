@@ -5,10 +5,10 @@ import typography from '@tailwindcss/typography';
 module.exports = {
   darkMode: 'class',
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
+    './pages/**/*.{ts,tsx,md,mdx}',
+    './components/**/*.{ts,tsx,md,mdx}',
+    './app/**/*.{ts,tsx,md,mdx}',
+    './src/**/*.{ts,tsx,md,mdx}',
     './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
