@@ -1,4 +1,5 @@
 import { nextui } from '@nextui-org/react';
+import typography from '@tailwindcss/typography';
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -21,5 +22,5 @@ module.exports = {
       },
     },
   },
-  plugins: [nextui()],
+  plugins: [nextui(), typography()],
 };
