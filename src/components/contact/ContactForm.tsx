@@ -3,15 +3,13 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Button, Card, CardBody, Input, Textarea } from '@nextui-org/react';
 
-import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { toast } from 'sonner';
 
 import { type ContactPayload, ContactValidator } from '~/lib/validators/ContactValidator';
 import { sendEmail } from '~/server/resend';
 
 const ContactForm = () => {
-  const [success, setSuccess] = useState(false);
-
   const {
     register,
     handleSubmit,
@@ -22,17 +20,20 @@ const ContactForm = () => {
   });
 
   const onSubmit = async (data: ContactPayload) => {
+    const loadingToast = toast.loading('Sending message...');
+
     const res = await sendEmail(data);
 
     if (res?.success) {
-      setSuccess(true);
-      reset();
+      toast.success('Message sent successfully, check your inbox for a confirmation email.', {
+        id: loadingToast,
+      });
 
-      console.log(res);
+      reset();
       return;
     }
 
-    console.log(res);
+    toast.error('An error occurred while sending the message.', { id: loadingToast });
   };
 
   return (
@@ -97,7 +98,6 @@ const ContactForm = () => {
           <Button type="submit" radius="lg" color="primary">
             Send
           </Button>
-          {success && <p>Message sent successfully, check your inbox for a confirmation email.</p>}
         </CardBody>
       </Card>
     </form>
