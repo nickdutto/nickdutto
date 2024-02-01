@@ -11,7 +11,7 @@ type Props = {
   message: string;
 };
 
-const ConfirmationEmailTemplate = ({ name, from, subject, message }: Props) => (
+const ContactConfirmationEmail = ({ name, from, subject, message }: Props) => (
   <Html>
     <Head />
     <Tailwind>
@@ -21,7 +21,7 @@ const ConfirmationEmailTemplate = ({ name, from, subject, message }: Props) => (
           style={{ boxShadow: '0 5px 10px rgba(20,50,70,.25)' }}
         >
           <Heading className="text-center text-xl font-bold text-[#006FEE]">
-            Contact Form - Confirmation
+            Contact Confirmation
           </Heading>
           <Text className="text-[#27272a]">
             Hello {name}, thank you for your inquiry. I have received your message and I will get
@@ -89,4 +89,4 @@ const ConfirmationEmailTemplate = ({ name, from, subject, message }: Props) => (
   </Html>
 );
 
-export default ConfirmationEmailTemplate;
+export default ContactConfirmationEmail;
