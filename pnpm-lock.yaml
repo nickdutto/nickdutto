@@ -10,6 +10,9 @@ patchedDependencies:
     path: patches/react-email@2.0.0.patch
 
 dependencies:
+  '@hookform/resolvers':
+    specifier: ^3.3.4
+    version: 3.3.4(react-hook-form@7.49.3)
   '@mdx-js/loader':
     specifier: ^3.0.0
     version: 3.0.0(webpack@5.90.0)
@@ -58,6 +61,9 @@ dependencies:
   react-email:
     specifier: ^2.0.0
     version: 2.0.0(patch_hash=acacrzpt3rs2w5jtokhd346ive)(eslint@8.56.0)
+  react-hook-form:
+    specifier: ^7.49.3
+    version: 7.49.3(react@18.2.0)
   react-zoom-pan-pinch:
     specifier: ^3.3.0
     version: 3.3.0(react-dom@18.2.0)(react@18.2.0)
@@ -466,6 +472,14 @@ packages:
     resolution: {integrity: sha512-txaaE2fiBMagLrR4jYhxzFO6wEdEG4TPMqrzBAcbr4HFUYzH/YC+lg6OIzKCHm8WgDdyQevxbAAV1OgcXctuGw==}
     dependencies:
       tslib: 2.6.2
+    dev: false
+
+  /@hookform/resolvers@3.3.4(react-hook-form@7.49.3):
+    resolution: {integrity: sha512-o5cgpGOuJYrd+iMKvkttOclgwRW86EsWJZZRC23prf0uU2i48Htq4PuT73AVb9ionFyZrwYEITuOFGF+BydEtQ==}
+    peerDependencies:
+      react-hook-form: ^7.0.0
+    dependencies:
+      react-hook-form: 7.49.3(react@18.2.0)
     dev: false
 
   /@humanwhocodes/config-array@0.11.13:
@@ -7907,6 +7921,15 @@ packages:
       - webpack-cli
     dev: false
     patched: true
+
+  /react-hook-form@7.49.3(react@18.2.0):
+    resolution: {integrity: sha512-foD6r3juidAT1cOZzpmD/gOKt7fRsDhXXZ0y28+Al1CHgX+AY1qIN9VSIIItXRq1dN68QrRwl1ORFlwjBaAqeQ==}
+    engines: {node: '>=18', pnpm: '8'}
+    peerDependencies:
+      react: ^16.8.0 || ^17 || ^18
+    dependencies:
+      react: 18.2.0
+    dev: false
 
   /react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
