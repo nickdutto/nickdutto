@@ -1,10 +1,15 @@
 import { defineConfig } from '@tanstack/react-start/config'
 import viteTsConfigPaths from 'vite-tsconfig-paths'
 import tailwindcss from '@tailwindcss/vite'
+import { cloudflare } from 'unenv'
 
 export default defineConfig({
   tsr: {
     appDirectory: 'src',
+  },
+  server: {
+    preset: 'cloudflare-pages',
+    unenv: cloudflare,
   },
   vite: {
     plugins: [
