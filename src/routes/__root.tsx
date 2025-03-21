@@ -9,6 +9,7 @@ import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 import Header from "~/shared/layout/header";
 import TanstackQueryLayout from "~/shared/tanstack-query/layout";
 
+import interCss from "~/shared/styles/inter.css?url";
 import mainCss from "~/shared/styles/main.css?url";
 
 import type { QueryClient } from "@tanstack/react-query";
@@ -31,6 +32,10 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
 			},
 		],
 		links: [
+			{
+				rel: "stylesheet",
+				href: interCss,
+			},
 			{
 				rel: "stylesheet",
 				href: mainCss,
