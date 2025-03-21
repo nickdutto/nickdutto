@@ -1,7 +1,7 @@
 import clsx from "clsx";
-import { Icon } from "~/shared/ui/Icon";
 import { buttonVariants } from "~/shared/ui/button";
 import { Dock, DockIcon } from "~/shared/ui/dock";
+import { Icon } from "~/shared/ui/icon";
 import {
 	Tooltip,
 	TooltipContent,

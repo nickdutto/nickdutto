@@ -1,4 +1,11 @@
 {
+	"files.exclude": {
+		".output": true,
+		".vinxi": true,
+		".wrangler": true,
+		"dist": true,
+		"node_modules": true
+	},
 	"files.watcherExclude": {
 		"**/routeTree.gen.ts": true
 	},

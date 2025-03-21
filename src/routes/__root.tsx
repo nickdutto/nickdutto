@@ -6,16 +6,16 @@ import {
 } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 
-import Header from "~/shared/layout/header";
 import TanstackQueryLayout from "~/shared/tanstack-query/layout";
 
 import interCss from "~/shared/styles/inter.css?url";
 import mainCss from "~/shared/styles/main.css?url";
 
 import type { QueryClient } from "@tanstack/react-query";
-interface MyRouterContext {
+
+type MyRouterContext = {
 	queryClient: QueryClient;
-}
+};
 
 export const Route = createRootRouteWithContext<MyRouterContext>()({
 	head: () => ({
@@ -45,9 +45,8 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
 
 	component: () => (
 		<RootDocument>
-			<Header />
-
 			<Outlet />
+
 			<TanStackRouterDevtools />
 
 			<TanstackQueryLayout />
