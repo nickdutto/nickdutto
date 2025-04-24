@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Sidebar } from "~/shared/layout/sidebar";
 
 export const Route = createFileRoute("/")({
 	component: App,
@@ -8,11 +7,7 @@ export const Route = createFileRoute("/")({
 function App() {
 	return (
 		<div className="flex gap-2">
-			<Sidebar />
-
-			<main className="text-center p-4">
-				<p>Hello, World!</p>
-			</main>
+			<p>Hello, World!</p>
 		</div>
 	);
 }
