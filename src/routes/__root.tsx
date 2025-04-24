@@ -12,6 +12,7 @@ import fontsCss from "~/shared/styles/fonts.css?url";
 import mainCss from "~/shared/styles/main.css?url";
 
 import type { QueryClient } from "@tanstack/react-query";
+import { Navbar } from "~/shared/layout/navbar";
 
 type MyRouterContext = {
 	queryClient: QueryClient;
@@ -60,8 +61,12 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 			<head>
 				<HeadContent />
 			</head>
-			<body>
+
+			<body className="flex flex-col min-h-screen">
+				<Navbar className="m-2" />
+
 				{children}
+
 				<Scripts />
 			</body>
 		</html>
